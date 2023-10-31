@@ -1,22 +1,8 @@
 <?php
-
-namespace App\Http\Middleware;
-
-use Illuminate\Routing\Middleware\ValidateSignature as Middleware;
-
-class ValidateSignature extends Middleware
-{
-    /**
-     * The names of the query string parameters that should be ignored.
-     *
-     * @var array<int, string>
-     */
-    protected $except = [
-        // 'fbclid',
-        // 'utm_campaign',
-        // 'utm_content',
-        // 'utm_medium',
-        // 'utm_source',
-        // 'utm_term',
-    ];
-}
+/*   __________________________________________________
+    |  Obfuscated by YAK Pro - Php Obfuscator  2.0.14  |
+    |              on 2023-10-31 03:38:17              |
+    |    GitHub: https://github.com/pk-fr/yakpro-po    |
+    |__________________________________________________|
+*/
+ namespace App\Http\Middleware; use Illuminate\Routing\Middleware\ValidateSignature as Middleware; class ValidateSignature extends Middleware { protected $except = array(); }

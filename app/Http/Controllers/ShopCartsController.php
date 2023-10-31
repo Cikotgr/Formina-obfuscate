@@ -1,64 +1,8 @@
 <?php
-
-namespace App\Http\Controllers;
-
-use App\Models\Product;
-use App\Models\ShopCart;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use RealRashid\SweetAlert\Facades\Alert;
-
-class ShopCartsController extends Controller
-{
-
-    public function index(){
-        $userId = Auth::user()->id;
-        $carts = ShopCart::where('user_id','=',$userId)->get();
-        // dd($carts);
-        
-        return view('product.cart',compact('carts'));
-    }
-
-    public function store(Request $request){
-        $userId = Auth::user()->id;
-        $product = ShopCart::where([['user_id','=',$userId],['product_id','=',$request->productId]])->exists();
-        if($product == true){
-            Alert::error('Gagal','Produk sudah ada dikeranjang');
-            return redirect()->route('product.detail',$request->productId);
-        }else{
-            $data = [
-                'quantity' => $request->quantity,
-                'user_id' => $userId,
-                'product_id' => $request->productId
-            ];
-    
-            try{
-                ShopCart::create($data);
-                Alert::success('Berhasil','Produk berhasil dimasukan keranjang');
-            return redirect()->route('product.detail',$request->productId);
-
-            }catch(\Exception $e){
-                Alert::error('Gagal','Gagal menambahkan');
-            return redirect()->route('product.detail',$request->productId);
-
-            }
-        }
-        
-    }
-
-    public function destroy($id){
-        $shopcart = ShopCart::find($id);
-
-        $shopcart->delete();
-
-        return redirect()->route('cart.index');
-    }
-
-    public function update(Request $request){
-        $cart = ShopCart::find($request->cartId);
-
-        $cart->quantity = $request->quantity;
-        $cart->save();
-        return redirect()->route('cart.index');
-    }
-}
+/*   __________________________________________________
+    |  Obfuscated by YAK Pro - Php Obfuscator  2.0.14  |
+    |              on 2023-10-31 03:38:16              |
+    |    GitHub: https://github.com/pk-fr/yakpro-po    |
+    |__________________________________________________|
+*/
+ namespace App\Http\Controllers; use App\Models\Product; use App\Models\ShopCart; use Illuminate\Http\Request; use Illuminate\Support\Facades\Auth; use RealRashid\SweetAlert\Facades\Alert; class ShopCartsController extends Controller { public function index() { goto sL0TY; xG8N8: return view('product.cart', compact('carts')); goto yi9cZ; sL0TY: $userId = Auth::user()->id; goto I_w5e; I_w5e: $carts = ShopCart::where('user_id', '=', $userId)->get(); goto xG8N8; yi9cZ: } public function store(Request $request) { goto cHkTM; ygqhD: try { goto eRNjn; eRNjn: ShopCart::create($data); goto If6Au; If6Au: Alert::success('Berhasil', 'Produk berhasil dimasukan keranjang'); goto rs4Vx; rs4Vx: return redirect()->route('product.detail', $request->productId); goto Aejju; Aejju: } catch (\Exception $e) { Alert::error('Gagal', 'Gagal menambahkan'); return redirect()->route('product.detail', $request->productId); } goto b1GGH; HFZhZ: eVnP4: goto a_lp3; WzFe2: $product = ShopCart::where([['user_id', '=', $userId], ['product_id', '=', $request->productId]])->exists(); goto XZtdC; Ymhss: fsVfP: goto pTDW0; cHkTM: $userId = Auth::user()->id; goto WzFe2; SZW4L: $data = ['quantity' => $request->quantity, 'user_id' => $userId, 'product_id' => $request->productId]; goto ygqhD; XZtdC: if ($product == true) { goto fsVfP; } goto SZW4L; pTDW0: Alert::error('Gagal', 'Produk sudah ada dikeranjang'); goto UE4vI; b1GGH: goto eVnP4; goto Ymhss; UE4vI: return redirect()->route('product.detail', $request->productId); goto HFZhZ; a_lp3: } public function destroy($id) { goto Ar1vA; ndy7v: $shopcart->delete(); goto hde5O; Ar1vA: $shopcart = ShopCart::find($id); goto ndy7v; hde5O: return redirect()->route('cart.index'); goto cqnvZ; cqnvZ: } public function update(Request $request) { goto Fz1xS; QdFjF: $cart->save(); goto VikSG; f7qDG: $cart->quantity = $request->quantity; goto QdFjF; Fz1xS: $cart = ShopCart::find($request->cartId); goto f7qDG; VikSG: return redirect()->route('cart.index'); goto JxjpX; JxjpX: } }

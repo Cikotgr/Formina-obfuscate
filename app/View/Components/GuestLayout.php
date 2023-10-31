@@ -1,17 +1,8 @@
 <?php
-
-namespace App\View\Components;
-
-use Illuminate\View\Component;
-use Illuminate\View\View;
-
-class GuestLayout extends Component
-{
-    /**
-     * Get the view / contents that represents the component.
-     */
-    public function render(): View
-    {
-        return view('layouts.guest');
-    }
-}
+/*   __________________________________________________
+    |  Obfuscated by YAK Pro - Php Obfuscator  2.0.14  |
+    |              on 2023-10-31 03:38:18              |
+    |    GitHub: https://github.com/pk-fr/yakpro-po    |
+    |__________________________________________________|
+*/
+ namespace App\View\Components; use Illuminate\View\Component; use Illuminate\View\View; class GuestLayout extends Component { public function render() : View { return view('layouts.guest'); } }
